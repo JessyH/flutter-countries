@@ -5,14 +5,17 @@ import '../../model/country.dart';
 import '../../repositories/countries_repository.dart';
 
 class DetailsProvider extends BaseProvider {
-  Country _country;
   final CountryRepository countryRepository;
+  Country _country;
+  bool _isExpanded = false;
 
   DetailsProvider({
     @required this.countryRepository,
   });
 
   Country get country => _country;
+
+  bool get isExpanded => _isExpanded;
 
   void init(Country country) => _country = country;
 
@@ -26,4 +29,8 @@ class DetailsProvider extends BaseProvider {
       setState(ProviderState.Failure);
     }
   }
+
+  void expand() => _isExpanded = true;
+
+  void contract() => _isExpanded = false;
 }

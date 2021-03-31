@@ -21,59 +21,29 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: InkWell(
+      child: ListTile(
         enableFeedback: true,
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(14),
-              child: CircleAvatar(
-                backgroundColor: _randomLightColor,
-                radius: 20,
-                child: Text(
-                  country.code,
-                  style: TextStyle(
-                    color: AppColors.circleAvatarText,
-                  ),
-                ),
-              ),
+        leading: CircleAvatar(
+          backgroundColor: _randomLightColor,
+          radius: 20,
+          child: Text(
+            country.code,
+            style: TextStyle(
+              color: AppColors.circleAvatarText,
             ),
-            Expanded(
-              flex: 8,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      country.name,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: AppColors.text, fontSize: 16),
-                    ),
-                    Text(
-                      country.capital,
-                      style: TextStyle(color: AppColors.secondaryText),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      country.emoji,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
+          ),
+        ),
+        title: Text(
+          country.name,
+          overflow: TextOverflow.ellipsis,
+        ),
+        subtitle: Text(
+          country.capital,
+          style: TextStyle(color: AppColors.secondaryText),
+        ),
+        trailing: Text(
+          country.emoji,
+          style: TextStyle(fontSize: 20),
         ),
         onTap: () => Navigator.push(
           context,

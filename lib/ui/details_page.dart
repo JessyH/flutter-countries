@@ -38,8 +38,40 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 
   Widget _body() {
-    return Center(
-      child: Text('${_detailsProvider.country.currency}'),
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: Text(
+              _detailsProvider.country.emoji,
+              style: TextStyle(fontSize: 24),
+            ),
+            title: Text(_detailsProvider.country.name),
+          ),
+          // Row(
+          //   children: [
+          //     Container(
+          //       child: Column(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Text(
+          //             _detailsProvider.country.emoji,
+          //             style: TextStyle(fontSize: 24),
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: Container(
+          //         child: Text(_detailsProvider.country.name),
+          //       ),
+          //     )
+          //   ],
+          // ),
+        ],
+      ),
     );
   }
 }
