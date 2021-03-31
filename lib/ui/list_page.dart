@@ -30,12 +30,12 @@ class _ListPageState extends State<ListPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppStrings.title),
+        title: Text(AppStrings.appTitle),
       ),
       body: stateAwareWidget(
         state: _listProvider.state,
-        success: _listView(),
-        failure: Text('ERROR'),
+        successWidget: _listView,
+        failureWidget: _error,
       ),
     );
   }
@@ -51,6 +51,12 @@ class _ListPageState extends State<ListPage> {
           country: _listProvider.countries[index],
         ),
       ),
+    );
+  }
+
+  Widget _error() {
+    return Center(
+      child: Text(AppStrings.errorLoadingCountries),
     );
   }
 }

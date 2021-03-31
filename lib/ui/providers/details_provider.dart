@@ -30,7 +30,13 @@ class DetailsProvider extends BaseProvider {
     }
   }
 
-  void expand() => _isExpanded = true;
+  void expand() {
+    _isExpanded = true;
+    notifyListeners();
+  }
 
-  void contract() => _isExpanded = false;
+  void contract() {
+    _isExpanded = false;
+    notifyListeners();
+  }
 }

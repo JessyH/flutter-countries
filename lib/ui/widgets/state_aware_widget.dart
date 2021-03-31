@@ -5,15 +5,15 @@ import '../providers/base_provider.dart';
 
 Widget stateAwareWidget({
   @required ProviderState state,
-  @required Widget success,
-  @required Widget failure,
+  @required Function successWidget,
+  @required Function failureWidget,
   Widget defaultWidget,
 }) {
   switch (state) {
     case ProviderState.Success:
-      return success;
+      return successWidget();
     case ProviderState.Failure:
-      return failure;
+      return failureWidget();
     default:
       return defaultWidget == null ? CustomProgressIndicator() : defaultWidget;
   }
