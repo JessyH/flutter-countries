@@ -2,9 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
+import '../dependency_injection.dart' as di;
 import '../model/country.dart';
+import '../providers/details_provider.dart';
 import '../res/app_colors.dart';
+import '../ui/details_page.dart';
 
 class ListItem extends StatelessWidget {
   final Country country;
@@ -71,7 +75,15 @@ class ListItem extends StatelessWidget {
             )
           ],
         ),
-        onTap: () => print('${country.name} tapped!'),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChangeNotifierProvider(
+              create: (_) => di.getIt<DetailsProvider>()..init(country),
+              child: DetailsPage(),
+            ),
+          ),
+        ),
       ),
     );
   }
