@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/details_provider.dart';
 import 'widgets/state_aware_widget.dart';
-import '../providers/details_provider.dart';
 
 class DetailsPage extends StatefulWidget {
   @override

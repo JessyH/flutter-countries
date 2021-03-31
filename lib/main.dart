@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'dependency_injection.dart' as di;
-import 'providers/list_provider.dart';
 import 'res/app_colors.dart';
 import 'res/app_strings.dart';
 import 'ui/list_page.dart';
+import 'ui/providers/list_provider.dart';
 
 void main() {
   di.setup();

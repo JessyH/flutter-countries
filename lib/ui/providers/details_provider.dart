@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 import 'base_provider.dart';
-import '../model/country.dart';
-import '../repositories/countries_repository.dart';
+import '../../model/country.dart';
+import '../../repositories/countries_repository.dart';
 
 class DetailsProvider extends BaseProvider {
   Country _country;

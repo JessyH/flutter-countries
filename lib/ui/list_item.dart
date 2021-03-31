@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/details_provider.dart';
 import '../dependency_injection.dart' as di;
 import '../model/country.dart';
-import '../providers/details_provider.dart';
 import '../res/app_colors.dart';
 import '../ui/details_page.dart';
 

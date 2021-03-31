@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_countries/providers/base_provider.dart';
-import 'package:flutter_countries/ui/widgets/custom_progress_indicator.dart';
+
+import 'custom_progress_indicator.dart';
+import '../providers/base_provider.dart';
 
 Widget stateAwareWidget({
   @required ProviderState state,

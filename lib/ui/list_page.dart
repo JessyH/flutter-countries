@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import 'list_item.dart';
+import 'providers/list_provider.dart';
 import 'widgets/state_aware_widget.dart';
-import '../providers/list_provider.dart';
 import '../res/app_colors.dart';
 import '../res/app_strings.dart';
 

@@ -2,8 +2,8 @@ import 'package:get_it/get_it.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'data/country_repository_impl.dart';
-import 'providers/details_provider.dart';
-import 'providers/list_provider.dart';
+import 'ui/providers/details_provider.dart';
+import 'ui/providers/list_provider.dart';
 import 'repositories/countries_repository.dart';
 
 final getIt = GetIt.instance;
