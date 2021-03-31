@@ -9,4 +9,28 @@ class Queries {
       }
     }
   """;
+
+  static String getCountry(String code) => """
+    query {
+	    country(code: "$code") {
+		    code,
+        name,
+        native,
+        phone,
+        capital,
+        currency,
+        emoji,
+        languages {
+			    code,
+          name,
+          native,
+          rtl
+        },
+        continent {
+			    code,
+          name
+		    }
+	    }
+    }
+  """;
 }

@@ -16,5 +16,14 @@ class DetailsProvider extends BaseProvider {
 
   void init(Country country) => _country = country;
 
-  void fetchDetails() async {}
+  void fetchDetails() async {
+    try {
+      setState(ProviderState.Loading);
+      _country = await countryRepository.getCountry(_country.code);
+      setState(ProviderState.Success);
+    } catch (e) {
+      print(e);
+      setState(ProviderState.Failure);
+    }
+  }
 }

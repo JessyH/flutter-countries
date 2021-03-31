@@ -19,6 +19,7 @@ class ListProvider extends BaseProvider {
       _countries.addAll(await countryRepository.getCountries());
       setState(ProviderState.Success);
     } catch (e) {
+      print(e);
       setState(ProviderState.Failure);
     }
   }

@@ -22,9 +22,21 @@ class CountryRepositoryImpl extends CountryRepository {
     return Responses.mapToCountryList(queryResult.data['countries']);
   }
 
+  @override
+  Future<Country> getCountry(String code) async {
+    final queryResult = await _safeQuery(
+      options: WatchQueryOptions(
+        document: gql(Queries.getCountry(code)),
+        fetchResults: true,
+      ),
+    );
+    return Responses.mapToCountry(queryResult.data['country']);
+  }
+
   Future<QueryResult> _safeQuery({WatchQueryOptions options}) async {
     final queryResult = await client.query(options);
     if (queryResult.hasException) {
+      print(queryResult);
       throw Exception(queryResult.exception.graphqlErrors);
     }
     return queryResult;

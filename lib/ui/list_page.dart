@@ -3,11 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import 'list_item.dart';
-import '../providers/base_provider.dart';
+import 'widgets/state_aware_widget.dart';
 import '../providers/list_provider.dart';
 import '../res/app_colors.dart';
 import '../res/app_strings.dart';
-import '../ui/custom_progress_indicator.dart';
 
 class ListPage extends StatefulWidget {
   @override
@@ -33,9 +32,11 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         title: Text(AppStrings.title),
       ),
-      body: _listProvider.state == ProviderState.Success
-          ? _listView()
-          : CustomProgressIndicator(),
+      body: stateAwareWidget(
+        state: _listProvider.state,
+        success: _listView(),
+        failure: Text('ERROR'),
+      ),
     );
   }
 

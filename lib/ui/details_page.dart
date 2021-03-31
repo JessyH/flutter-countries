@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/base_provider.dart';
+import 'widgets/state_aware_widget.dart';
 import '../providers/details_provider.dart';
-import '../ui/custom_progress_indicator.dart';
 
 class DetailsPage extends StatefulWidget {
   @override
@@ -30,15 +29,17 @@ class _DetailsPageState extends State<DetailsPage> {
       appBar: AppBar(
         title: Text(_detailsProvider.country.name),
       ),
-      body: _detailsProvider.state == ProviderState.Success
-          ? _body()
-          : CustomProgressIndicator(),
+      body: stateAwareWidget(
+        state: _detailsProvider.state,
+        success: _body(),
+        failure: Text('ERROR'),
+      ),
     );
   }
 
   Widget _body() {
     return Center(
-      child: Text('${_detailsProvider.country.emoji}'),
+      child: Text('${_detailsProvider.country.currency}'),
     );
   }
 }
