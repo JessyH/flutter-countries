@@ -17,6 +17,6 @@ class AppColors {
 
   // Text
   static const Color text = Color.fromRGBO(0, 0, 0, 0.8);
-  static const Color secondaryText = Color.fromRGBO(0, 0, 0, 0.3);
+  static const Color secondaryText = Color.fromRGBO(0, 0, 0, 0.4);
   static const Color circleAvatarText = Color.fromRGBO(0, 0, 0, 0.6);
 }
