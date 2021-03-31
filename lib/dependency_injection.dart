@@ -4,7 +4,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'data/country_repository_impl.dart';
 import 'ui/providers/details_provider.dart';
 import 'ui/providers/list_provider.dart';
-import 'repositories/countries_repository.dart';
+import 'repositories/country_repository.dart';
 
 final getIt = GetIt.instance;
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'base_provider.dart';
 import '../../model/country.dart';
-import '../../repositories/countries_repository.dart';
+import '../../repositories/country_repository.dart';
 
 class ListProvider extends BaseProvider {
   final List<Country> _countries = [];

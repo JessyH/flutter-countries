@@ -4,7 +4,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import '../data/queries.dart';
 import '../data/responses.dart';
 import '../model/country.dart';
-import '../repositories/countries_repository.dart';
+import '../repositories/country_repository.dart';
 
 class CountryRepositoryImpl extends CountryRepository {
   final GraphQLClient client;
