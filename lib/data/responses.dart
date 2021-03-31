@@ -7,6 +7,8 @@ class Responses {
           (item) => Country(
             code: item['code'],
             name: item['name'],
+            capital: item['capital'],
+            emoji: item['emoji'],
           ),
         )
         .toList(growable: false);

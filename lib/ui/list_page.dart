@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'list_item.dart';
 import '../providers/base_provider.dart';
 import '../providers/list_provider.dart';
 import '../res/app_colors.dart';
@@ -44,8 +45,10 @@ class _ListPageState extends State<ListPage> {
       thumbColor: AppColors.primaryDark,
       child: ListView.builder(
         itemCount: _listProvider.countries.length,
-        itemBuilder: (context, int index) =>
-            Text(_listProvider.countries[index].name),
+        itemBuilder: (context, int index) => ListItem(
+          key: ObjectKey(index),
+          country: _listProvider.countries[index],
+        ),
       ),
     );
   }

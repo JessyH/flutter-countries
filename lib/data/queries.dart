@@ -3,7 +3,9 @@ class Queries {
     query {
       countries {
         code,
-        name
+        name,
+        capital,
+        emoji
       }
     }
   """;
